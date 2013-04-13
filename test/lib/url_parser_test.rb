@@ -15,6 +15,14 @@ describe UrlParser do
     it "should return fullpath" do
       subject.fullpath.must_equal "music/hindi/movies/2013/g/go_goa_gone/Slowly-Slowly_(webmusic.in).mp3"
     end
+
+    it "should return host" do
+      subject.host.must_equal "35.webmusic.in"
+    end
+
+    it "should return path" do
+      subject.path.must_equal "/music/hindi/movies/2013/g/go_goa_gone/Slowly-Slowly_(webmusic.in).mp3"
+    end
   end
 
   describe "URL contained invalid characters" do

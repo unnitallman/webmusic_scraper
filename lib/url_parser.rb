@@ -3,6 +3,14 @@ class UrlParser
     @url = url
   end
 
+  def host
+    @url.split("/")[2]
+  end
+
+  def path
+    "/" + @url.split("/")[3..-1].join('/')
+  end
+
   def folder
     @url.split('webmusic.in/')[1].split('/')[0..-2].join('/')
   end

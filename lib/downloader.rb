@@ -5,7 +5,7 @@ class Downloader
 
   def download
     puts "Downloading #{@url} ..."
-    uri = URI.parse @url
+    uri = UrlParser.new @url
     Net::HTTP.start uri.host do |http|
       response = http.get uri.path
       @data = response.body
