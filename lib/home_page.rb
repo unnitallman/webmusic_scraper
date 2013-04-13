@@ -1,6 +1,6 @@
 class HomePage
   def initialize
-    @url = "http://webmusic.in/english.html"
+    @url = "http://webmusic.in/english-Rihanna-albums.html"
   end
 
   def scrape
