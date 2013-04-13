@@ -1,9 +1,4 @@
-require 'rubygems'
-require 'bundler/setup'
-require 'open-uri'
-require 'net/http'
-
-Bundler.require
+require File.dirname(__FILE__) + '/boot'
 
 ['home_page','album_page','downloader','url_parser','file_writer'].each do |f|
   require File.dirname(__FILE__) + '/lib/' + f

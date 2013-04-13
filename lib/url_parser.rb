@@ -4,11 +4,11 @@ class UrlParser
   end
 
   def folder
-    URI.parse(@url).path.split('/')[1..-2].join('/')
+    @url.split('webmusic.in/')[1].split('/')[0..-2].join('/')
   end
 
   def file
-    URI.parse(@url).path.split('/')[-1]
+    @url.split('webmusic.in/')[1].split('/').last
   end
 
   def fullpath
