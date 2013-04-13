@@ -16,8 +16,9 @@ album_links.each do |album_link|
   album_page = AlbumPage.new(album_link)
   song_links = album_page.scrape
   song_links.each do |song_link|
-    song_data  = Downloader.new(song_link).download
     url_parser = UrlParser.new(song_link)
+    break if File.exists? url_parser.folder
+    song_data  = Downloader.new(song_link).download
     FileWriter.new(song_data, url_parser.folder, url_parser.file).write
   end
 end

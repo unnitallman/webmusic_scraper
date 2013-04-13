@@ -8,9 +8,9 @@ class Downloader
     uri = URI.parse @url
     Net::HTTP.start uri.host do |http|
       response = http.get uri.path
-      response.body
+      @data = response.body
     end
-    puts "Done"
+    @data
   end
 end
 

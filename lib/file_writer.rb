@@ -10,9 +10,9 @@ class FileWriter
   def write
     puts "Writing #{@file} ..."
     open(@file, "wb") do |f|
-      file.write @data
+      f.write @data
     end
-    puts "*************Done************"
+    puts "Done"
   end
 
   private
